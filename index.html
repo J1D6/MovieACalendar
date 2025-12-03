@@ -2,55 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Calendario de Adviento de Cine</title>
+  <title>Calendario de Adviento de Cine 🎬🎄</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Nieve -->
   <canvas id="snow"></canvas>
 
-  <!-- CONTENIDO -->
   <div class="overlay">
 
-    <h1>🎄 Movie Advent Calendar 🎬</h1>
-
-
-    <div class="top-bar">
-      <span>Casillas abiertas: <b id="counter">2</b> / 24</span>
-      <button onclick="showTop3()">🎬 Ver mi Top 3</button>
+    <h1>🎄 Calendario de Adviento de Cine</h1>
+    <p class="subtitle">Ingresa tu nombre para comenzar / continuar</p>
+    <div class="user-login">
+      <input type="text" id="usernameInput" placeholder="Tu nombre...">
+      <button id="btnLogin">Entrar</button>
     </div>
 
-    <div class="calendar">
+    <div id="mainContent" style="display:none;">
 
-      <!-- DÍA 1 -->
-      <div class="day opened" onclick="openDay(1)">
-        <span class="number">1</span>
-        <span class="movie">Last Christmas</span>
+      <div class="top-bar">
+        <span>Casillas abiertas: <b id="counter">0</b> / 24</span>
+        <button onclick="showTop3()">🎬 Ver mi Top 3</button>
       </div>
 
-      <!-- DÍA 2 -->
-      <div class="day opened" onclick="openDay(2)">
-        <span class="number">2</span>
-        <span class="movie">A Charlie Brown Christmas</span>
+      <audio id="bgAudio" src="audio.mp3" preload="auto"></audio>
+
+      <div class="calendar" id="calendar">
+        <!-- Casillas se generan con JS -->
       </div>
 
-      <!-- DÍAS 3-24 -->
-      <script>
-        for(let i=3; i<=24; i++){
-          document.write(`
-            <div class="day" onclick="openDay(${i})">
-              <span class="number">${i}</span>
-              <span class="movie hidden">🎁 Sorpresa</span>
-            </div>
-          `)
-        }
-      </script>
 
     </div>
+
   </div>
 
-  <!-- MODAL -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <h2 id="modal-title"></h2>
