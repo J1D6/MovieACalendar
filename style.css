@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle, #1b2a1f, #040913);
+  color: white;
+  text-align: center;
+}
+
+/* CANVAS NIEVE */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 100px;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 2.6em;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.top-bar button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #b30000;
+  color: white;
+  cursor: pointer;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* CASILLAS */
+.day {
+  background: linear-gradient(145deg, #3a0000, #701010);
+  padding: 20px 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.day:hover {
+  transform: scale(1.05);
+  background: #a90000;
+}
+
+.day.opened {
+  background: linear-gradient(145deg, #215c21, #113211);
+}
+
+.number {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.movie {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #112311;
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 300px;
+}
+
+.modal-content button {
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: #b30000;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* ESTRELLAS */
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  color: gray;
+}
+
+.star.active {
+  color: gold;
+}
